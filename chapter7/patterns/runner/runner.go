@@ -36,6 +36,7 @@ var ErrInterrupt = errors.New("received interrupt")
 // New returns a new ready-to-use Runner.
 func New(d time.Duration) *Runner {
 	return &Runner{
+		// 若缓冲区已满, 则之后向通道内待传入的数据将被丢弃
 		interrupt: make(chan os.Signal, 1),
 		complete:  make(chan error),
 		timeout:   time.After(d),

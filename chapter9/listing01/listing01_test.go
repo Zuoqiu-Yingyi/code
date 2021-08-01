@@ -6,10 +6,11 @@ import (
 	"testing"
 )
 
-const checkMark = "\u2713"
-const ballotX = "\u2717"
+const checkMark = "\u2713" // ✔
+const ballotX = "\u2717"   // ✖
 
 // TestDownload validates the http Get function can download content.
+// 测试函数函数名必须以<Test>开头, 参数为<*testing.T>类型, 无返回值
 func TestDownload(t *testing.T) {
 	url := "http://www.goinggo.net/feeds/posts/default?alt=rss"
 	statusCode := 200

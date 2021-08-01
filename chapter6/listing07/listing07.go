@@ -12,6 +12,8 @@ import (
 func main() {
 	// Allocate two logical processors for the scheduler to use.
 	runtime.GOMAXPROCS(2)
+	// 给每个可用的核心分配一个逻辑处理器
+	runtime.GOMAXPROCS(runtime.NumCPU())
 
 	// wg is used to wait for the program to finish.
 	// Add a count of two, one for each goroutine.

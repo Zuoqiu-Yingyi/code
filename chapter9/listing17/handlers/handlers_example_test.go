@@ -10,6 +10,7 @@ import (
 )
 
 // ExampleSendJSON provides a basic example.
+// 示例函数函数名必须为<Example+测试函数函数名>
 func ExampleSendJSON() {
 	r, _ := http.NewRequest("GET", "/sendjson", nil)
 	w := httptest.NewRecorder()

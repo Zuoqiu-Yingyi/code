@@ -37,7 +37,7 @@ func mockServer() *httptest.Server {
 		fmt.Fprintln(w, feed)
 	}
 
-	return httptest.NewServer(http.HandlerFunc(f))
+	return httptest.NewServer(http.HandlerFunc(f)) // HandlerFunc: 将常规函数转换为http处理函数使用
 }
 
 // TestDownload validates the http Get function can download content

@@ -11,6 +11,7 @@ import (
 
 // BenchmarkSprintf provides performance numbers for the
 // fmt.Sprintf function.
+// 基准测试函数函数名必须以<Benchmark>开头, 并接受一个<*testing.B>类型的参数
 func BenchmarkSprintf(b *testing.B) {
 	number := 10
 

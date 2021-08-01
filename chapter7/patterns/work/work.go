@@ -26,6 +26,8 @@ func New(maxGoroutines int) *Pool {
 	p.wg.Add(maxGoroutines)
 	for i := 0; i < maxGoroutines; i++ {
 		go func() {
+			// p.work通道只有关闭后for循环才终止
+			// p.work通道不关闭但没有数据时for循环会阻塞
 			for w := range p.work {
 				w.Task()
 			}

@@ -22,7 +22,7 @@ func init() {
 		log.Fatalln("Failed to open error log file:", err)
 	}
 
-	Trace = log.New(ioutil.Discard,
+	Trace = log.New(ioutil.Discard, // 所有的Writer调用不会有动作但会成功返回
 		"TRACE: ",
 		log.Ldate|log.Ltime|log.Lshortfile)
 
@@ -34,7 +34,7 @@ func init() {
 		"WARNING: ",
 		log.Ldate|log.Ltime|log.Lshortfile)
 
-	Error = log.New(io.MultiWriter(file, os.Stderr),
+	Error = log.New(io.MultiWriter(file, os.Stderr), // 可以向多个Writer输出
 		"ERROR: ",
 		log.Ldate|log.Ltime|log.Lshortfile)
 }

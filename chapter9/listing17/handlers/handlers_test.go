@@ -1,6 +1,6 @@
 // Sample test to show how to test the execution of an
 // internal endpoint.
-package handlers_test
+package handlers_test // 必须以<_test>结尾
 
 import (
 	"encoding/json"
